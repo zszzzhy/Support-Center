@@ -1,25 +1,39 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div class="app-layout">
+    <header class="header">
+      <div>
+        <img src="./assets/logo.svg">
+      </div>
+      <div>My shirt shop</div>
+    </header>
+
+    <!-- 菜单 -->
+    <NavMenu/>
+    <!-- 根据菜单显示 -->
     <router-view/>
   </div>
 </template>
-<style lang="stylus">
-#app
-  font-family 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
 
-#nav
-  padding 30px
-  a
-    font-weight bold
-    color #2c3e50
-    &.router-link-exact-active
-      color #42b983
+<script>
+import NavMenu from "./components/NavMenu.vue";
+
+export default {
+  components: {
+    NavMenu
+  }
+};
+</script>
+
+
+<style lang="stylus">
+@import './style/main';
+</style>
+
+<style lang="stylus" scoped>
+.header {
+  .img {
+    width: 64px;
+    height: 64px;
+  }
+}
 </style>
