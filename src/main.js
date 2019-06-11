@@ -7,10 +7,16 @@ import './global-components';
 import State from './plugins/state';
 import Fetch, { $fetch } from './plugins/fetch';
 
+import * as filters from './filters';
+
 Vue.use(State, state);
 Vue.use(Fetch, {
 	baseUrl: 'http://localhost:3000/',
 });
+
+for (const key in filters) {
+	Vue.filter(key, filters[key]);
+}
 
 Vue.config.productionTip = false;
 

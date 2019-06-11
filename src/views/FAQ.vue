@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import RemoteData from "../mixin/RemoteData";
+import RemoteData from "../mixins/RemoteData";
 
 export default {
   mixins: [
