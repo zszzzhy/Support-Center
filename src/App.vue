@@ -10,12 +10,14 @@
     <!-- 菜单 -->
     <NavMenu/>
     <!-- 根据菜单显示 -->
-    <router-view/>
+    <transition name="fade" mode="out-in">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
 <script>
-import NavMenu from "./components/NavMenu.vue";
+import NavMenu from "./views/NavMenu.vue";
 
 export default {
   components: {

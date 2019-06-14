@@ -63,3 +63,11 @@ export default {
   }
 };
 </script>
+
+<style lang="stylus" scoped>
+.input {
+  &.invalid {
+    border-color: red;
+  }
+}
+</style>

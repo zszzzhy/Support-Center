@@ -14,6 +14,7 @@
         type="textarea"
         v-model="description"
         placeholder="Describe your problem in details"
+        required
         rows="4"
       />
       <template slot="actions">
@@ -26,6 +27,7 @@
 
 <script>
 import PersistantData from "../mixins/PersistantData";
+
 export default {
   mixins: [PersistantData("NewTicket", ["title", "description"])],
 
@@ -52,6 +54,7 @@ export default {
         })
       });
       this.title = this.description = "";
+      this.$router.push({ name: "ticket", params: { id: result._id } });
     }
   }
 };

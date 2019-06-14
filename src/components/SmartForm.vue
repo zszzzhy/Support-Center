@@ -1,11 +1,11 @@
 <template>
   <form @submit.prevent="submit">
     <section class="content">
-      <h2>{{title}}</h2>
-      <!-- Main content -->
+      <h2>{{ title }}</h2>
+
       <slot/>
+
       <div class="actions">
-        <!-- Action buttons -->
         <slot name="actions"/>
       </div>
 
@@ -13,7 +13,6 @@
     </section>
 
     <transition name="fade">
-      <!-- Expanding over the form -->
       <Loading v-if="busy" class="overlay"/>
     </transition>
   </form>

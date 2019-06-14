@@ -59,8 +59,8 @@ export default {
     },
     vaild() {
       return (
-        this.username &&
-        this.password &&
+        !!this.username &&
+        !!this.password &&
         (this.mode !== "signup" || this.signupValid)
       );
     }

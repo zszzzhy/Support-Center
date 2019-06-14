@@ -27,7 +27,7 @@ export default function(id, fields) {
 		},
 		// 在组件被销毁时保存字段
 		beforeDestroy() {
-			this.saveAllPersistantData();
+			this.saveAllPersistantData;
 		},
 	};
 }

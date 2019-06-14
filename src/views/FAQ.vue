@@ -2,6 +2,8 @@
   <main class="faq">
     <h1>Frenquently Asked Questions</h1>
 
+    <Loading v-if="remoteDataBusy"/>
+
     <div class="error" v-if="hasRemoteErrors">Can't load the questions</div>
 
     <section class="list">
@@ -10,8 +12,6 @@
         <p v-html="question.content"></p>
       </article>
     </section>
-
-    <Loading v-if="remoteDataBusy"/>
   </main>
 </template>
 

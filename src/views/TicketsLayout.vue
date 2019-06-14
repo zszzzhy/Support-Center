@@ -1,6 +1,9 @@
 <template>
   <main class="tickets-layout">
     <h1>Your Support tickets</h1>
+
+    <!-- <Tickets /> -->
+
     <div class="actions">
       <router-link
         class="secondary"
@@ -14,16 +17,13 @@
         :to="{name: 'new-ticket'}"
       >New ticket</router-link>
     </div>
+
     <router-view/>
   </main>
 </template>
 
-<script>
-import Tickets from "./Tickets.vue";
-
-export default {
-  components: {
-    Tickets
-  }
-};
-</script>
+<style lang="stylus" scoped>
+.actions {
+  margin-bottom: 32px;
+}
+</style>

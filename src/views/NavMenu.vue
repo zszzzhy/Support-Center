@@ -1,6 +1,5 @@
 <template>
   <nav class="menu">
-    <!-- 链接 -->
     <router-link :to="{ name: 'home' }" exact>Home</router-link>
     <router-link :to="{ name: 'faq' }">FAQ</router-link>
     <router-link :to="{ name: 'tickets' }">Support tickets</router-link>
@@ -21,6 +20,10 @@ export default {
       const result = await this.$fetch("logout");
       if (result.status === "ok") {
         this.$state.user = null;
+        // 如果是私有页面，则返回首页
+        if (this.$route.matched.some(m => m.meta.private)) {
+          this.$router.push({ name: "home" });
+        }
       }
     }
   }
